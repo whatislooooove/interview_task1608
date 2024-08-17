@@ -5,7 +5,7 @@
     <div class="row justify-content-center">
         <div class="col-md-8">
             <div>
-                <a href="#">Добавить продукт</a>
+                <a href="{{ route('products.add.form') }}">Добавить продукт</a>
             </div>
             <div>
                 <a href="{{route('products.get')}}">Получить продукты iPhone</a>

@@ -13,4 +13,21 @@ class DummyApiController extends Controller
         ImportJob::dispatch();
         return view('notification');
     }
+
+    public function addProduct(Request $req)
+    {
+        $connection = new Connection();
+        $res = $connection->client->request('POST', 'products/add', [
+            'query' => [
+                'title' => $req->input('title'),
+                'description' => $req->input('description'),
+                'price' => $req->input('price'),
+                'category' => $req->input('category'),
+                'sku' => bin2hex(random_bytes(4)),
+            ]
+        ]);
+        $result =json_decode($res->getBody()->getContents(), true);
+
+        return view('notification', compact('result'));
+    }
 }
