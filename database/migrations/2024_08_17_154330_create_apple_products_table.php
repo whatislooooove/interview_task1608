@@ -18,6 +18,7 @@ return new class extends Migration
             $table->string('description');
             $table->string('category');
             $table->unsignedInteger('price');
+            $table->string('sku')->unique();
         });
     }
 
