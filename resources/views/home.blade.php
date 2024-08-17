@@ -8,7 +8,7 @@
                 <a href="#">Добавить продукт</a>
             </div>
             <div>
-                <a href="#">Получить продукты iPhone</a>
+                <a href="{{route('products.get')}}">Получить продукты iPhone</a>
             </div>
         </div>
     </div>
